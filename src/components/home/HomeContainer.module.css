@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: var(--text-slate);
+
+  width: 100vw;
+  height: 100vh;
+
+  padding-left: 100px;
+}
+
+.greeting {
+  color: var(--text-slate-light);
+  margin-bottom: 30px;
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+.name {
+  color: var(--text-slate-lightest);
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.occupation {
+  color: var(--text-slate);
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 0.9;
+  margin-top: 10px;
+}
+
+.about {
+  color: var(--text-slate);
+  margin-top: 30px;
+  font-size: 18px;
+
+  width: 600px;
+}
+
+.view_projects_btn_bg {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 5px;
+  width: 250px;
+  height: auto;
+}
+
+.view_projects_btn_bg:hover {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.view_projects_btn {
+  border: 1px solid var(--links-white);
+  border-radius: 5px;
+  width: 250px;
+  color: var(--text-slate-lightest);
+  padding: 18px 0px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.view_projects_btn:hover,
+.view_projects_btn:focus {
+  color: var(--links-white);
+}
