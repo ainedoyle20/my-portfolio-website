@@ -64,7 +64,7 @@
 .project_description {
   padding: 25px;
   background-color: var(--bg-light-navy);
-  width: 55%;
+  width: 60%;
   box-shadow: 0 10px 30px -15px var(--navy-shadow);
   border-radius: 5px;
   color: var(--text-slate-light);
@@ -108,12 +108,10 @@
   position: absolute;
   top: 0;
   height: 100%;
-  width: 55%;
+  width: auto;
 
   display: flex;
   justify-content: flex-start;
-
-  border: 1px solid black;
 }
 
 .project_image {
@@ -130,6 +128,7 @@
   background-color: var(--bg-navy);
   opacity: 0.7;
   cursor: pointer;
+  transition: opacity 200ms;
 }
 
 .project_image_screen:hover {

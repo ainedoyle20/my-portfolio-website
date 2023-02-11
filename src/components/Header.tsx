@@ -14,17 +14,22 @@ const Header = ({ sectionId, setSectionId }: IHeaderProps) => {
   return (
     <header className={styles.header}>
       <div className={styles.socials}>
-        <img 
-          alt="github"
-          src={GithubSVG}
-          className={styles.social}
-        />
+        <a href="https://github.com/ainedoyle20" target="_blank" rel="noreferrer">
+          <img 
+            alt="github"
+            src={GithubSVG}
+            className={styles.social}
+          />
+        </a>
 
-        <img 
-          alt="linkedIn"
-          src={LinkedInSVG}
-          className={styles.social}
-        />
+        <a href="https://github.com/ainedoyle20" target="_blank" rel="noreferrer">
+          <img 
+            alt="linkedIn"
+            src={LinkedInSVG}
+            className={styles.social_linkedIn}
+          />
+        </a>
+
       </div>
 
       <div className={styles.section_links}>

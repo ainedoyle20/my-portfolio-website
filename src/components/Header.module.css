@@ -24,9 +24,13 @@
   gap: 20px;
 }
 
-.social {
-  width: 25px;
-  
+.social,
+.social_linkedIn {
+  width: 22px;
+}
+
+.social_linkedIn {
+  padding: 1px;
 }
 
 .section_links {

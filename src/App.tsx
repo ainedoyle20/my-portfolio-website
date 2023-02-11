@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import ContactContainer from "./components/contact/ContactContainer";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomeContainer from "./components/home/HomeContainer";
 import ProjectsContainer from "./components/projects/ProjectsContainer";
@@ -20,6 +21,7 @@ const App = () => {
       <ProjectsContainer />
       <SkillsContainer />
       <ContactContainer />
+      <Footer />
     </>
   );
 }
