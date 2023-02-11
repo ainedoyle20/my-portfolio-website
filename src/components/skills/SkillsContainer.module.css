@@ -1,9 +1,32 @@
 .container {
+  padding-top: 100px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: var(--text-slate);
 
   width: 100vw;
   height: 100vh;
+}
+
+.title_container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 50px;
+}
+
+.title {
+  color: var(--text-slate-lightest);
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.title_line {
+  border: 0.5px solid var(--bg-lightest-navy);
+  width: 300px;
+  margin-right: 20px;
 }
