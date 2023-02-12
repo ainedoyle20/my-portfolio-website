@@ -16,11 +16,11 @@ const App = () => {
 
   return (
     <>
-      <Header sectionId={sectionId} setSectionId={setSectionId} />
+      <Header sectionId={sectionId} />
       <HomeContainer setSectionId={setSectionId} />
-      <ProjectsContainer />
-      <SkillsContainer />
-      <ContactContainer />
+      <ProjectsContainer setSectionId={setSectionId} />
+      <SkillsContainer setSectionId={setSectionId} />
+      <ContactContainer setSectionId={setSectionId} />
       <Footer />
     </>
   );

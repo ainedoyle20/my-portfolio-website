@@ -1,13 +1,34 @@
+import { useEffect, useRef } from "react";
+
 import { skills } from "../../constants/skills";
 
 import styles from "./SkillsContainer.module.css";
 
-const SkillsContainer = () => {
+interface ISkillsProps {
+  setSectionId(arg: string | undefined): void;
+}
+
+const SkillsContainer = ({ setSectionId }: ISkillsProps) => {
+  const skillsRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setSectionId("skills");
+      }
+    });
+
+    if (skillsRef?.current) {
+      observer.observe(skillsRef.current);
+    }
+  }, []);
+
   return (
     <div id="skills" className={styles.container}>
       <span className={styles.title_container}>
         <span className={styles.title_line}></span>
-        <span className={styles.title}>
+        <span ref={skillsRef} className={styles.title}>
           My Skills
         </span>
       </span>

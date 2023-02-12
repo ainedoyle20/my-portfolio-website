@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import GithubSVG from "../../assets/projects/github.svg";
 import LiveSVG from "../../assets/projects/live.svg";
 
@@ -5,10 +6,29 @@ import { projects } from "../../constants/projects";
 
 import styles from "./ProjectsContainer.module.css";
 
-const ProjectsContainer = () => {
+interface IProjectProps {
+  setSectionId(arg: string | undefined): void;
+}
+
+const ProjectsContainer = ({ setSectionId }: IProjectProps) => {
+  const projectRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setSectionId("projects");
+      }
+    });
+
+    if (projectRef?.current) {
+      observer.observe(projectRef.current);
+    }
+  }, []);
+
   return (
     <div id="projects" className={styles.container}>
-      <span className={styles.title_container}>
+      <span ref={projectRef} className={styles.title_container}>
         <span className={styles.title}>
           My Projects
         </span>

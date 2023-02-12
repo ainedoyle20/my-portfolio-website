@@ -6,10 +6,9 @@ import styles from "./Header.module.css";
 
 interface IHeaderProps {
   sectionId: string | undefined;
-  setSectionId(arg: string | undefined): void;
 }
 
-const Header = ({ sectionId, setSectionId }: IHeaderProps) => {
+const Header = ({ sectionId }: IHeaderProps) => {
   
   return (
     <header className={styles.header}>
@@ -33,31 +32,22 @@ const Header = ({ sectionId, setSectionId }: IHeaderProps) => {
       </div>
 
       <div className={styles.section_links}>
-        <a href="#home" className={`${sectionId === "home" || sectionId === undefined ? styles.section_link_active : ""} ${styles.section_link}`}
-          onClick={() => setSectionId("home")}
-        >
+        <a href="#home" className={`${sectionId === "home" || sectionId === undefined ? styles.section_link_active : ""} ${styles.section_link}`}>
           Home
         </a>
-        <a href="#projects" className={`${sectionId === "projects" ? styles.section_link_active : ""} ${styles.section_link}`}
-          onClick={() => setSectionId("projects")}
-        >
+        <a href="#projects" className={`${sectionId === "projects" ? styles.section_link_active : ""} ${styles.section_link}`}>
           Projects
         </a>
-        <a href="#skills" className={`${sectionId === "skills" ? styles.section_link_active : ""} ${styles.section_link}`}
-          onClick={() => setSectionId("skills")}
-        >
+        <a href="#skills" className={`${sectionId === "skills" ? styles.section_link_active : ""} ${styles.section_link}`}>
           Skills
         </a>
-        <a href="#contact" className={`${sectionId === "contact" ? styles.section_link_active : ""} ${styles.section_link}`}
-          onClick={() => setSectionId("contact")}
-        >
+        <a href="#contact" className={`${sectionId === "contact" ? styles.section_link_active : ""} ${styles.section_link}`}>
           Contact
         </a>
       </div>
 
-
     </header>
-  )
+  );
 }
 
 export default Header;

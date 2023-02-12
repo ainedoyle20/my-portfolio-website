@@ -1,10 +1,42 @@
+import { useState, FormEvent, useEffect, useRef } from "react";
+
 import styles from "./ContactContainer.module.css";
 
-const ContactContainer = () => {
+interface IContactProps {
+  setSectionId(arg: string | undefined): void;
+}
+
+const ContactContainer = ({ setSectionId }: IContactProps) => {
+  const contactRef = useRef<HTMLSpanElement>(null);
+  const [ info, setInfo ] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setSectionId("contact");
+      }
+    });
+
+    if (contactRef?.current) {
+      observer.observe(contactRef.current);
+    }
+  }, []);
+
+  const onChangeHandler = (e: FormEvent<HTMLInputElement> | FormEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.currentTarget;
+
+    setInfo({ ...info, [name]: value });
+  }
+
   return (
     <div id="contact" className={styles.container}>
       <span className={styles.title_container}>
-        <span className={styles.title}>
+        <span ref={contactRef} className={styles.title}>
           Contact Me
         </span>
         <span className={styles.title_line}></span>
@@ -25,19 +57,21 @@ const ContactContainer = () => {
             <label htmlFor="yourName" className={styles.form_label}>Your Name</label>
             <input 
               id="yourName"
+              name="name"
               className={styles.form_input}
               type="text"
-              value=""
-              onChange={() => {}}
+              value={info.name}
+              onChange={(e) => onChangeHandler(e)}
             />
 
             <label htmlFor="email" className={styles.form_label}>Your Email</label>
             <input 
               className={styles.form_input}
               id="email"
+              name="email"
               type="email"
-              value=""
-              onChange={() => {}}
+              value={info.email}
+              onChange={(e) => onChangeHandler(e)}
             />
           </div>
 
@@ -46,18 +80,19 @@ const ContactContainer = () => {
             <textarea 
               className={styles.form_textarea}
               id="message"
-              value=""
-              onChange={() => {}}
+              name="message"
+              value={info.message}
+              onChange={(e) => onChangeHandler(e)}
             />
           </div>
 
         </div>
-      </div>
 
-      <div className={styles.submit_btn}>
-        Submit
+        <div className={styles.submit_btn}>
+          Submit
 
-        <div className={styles.submit_btn_screen} />
+          <div className={styles.submit_btn_screen} />
+        </div>
       </div>
     </div>
   )
