@@ -50,7 +50,7 @@ const ProjectsContainer = ({ setSectionId }: IProjectProps) => {
 
           <span className={styles.project_title}>{project.name}</span>
 
-          <p className={styles.project_description}>
+          <p className={`${styles.project_description} ${idx % 2 === 0 ? styles.description_end : styles.description_start}`}>
             {project.description}
           </p>
 
