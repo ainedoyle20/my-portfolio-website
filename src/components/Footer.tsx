@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <a className={styles.inspired_by} href="https://brittanychiang.com/" target="_blank" rel="noreferrer">
-        Designed Inspiration: Brittany Chiang Website
+        Design Inspiration: Brittany Chiang Website
       </a>
 
       <span className={styles.built_by}>
