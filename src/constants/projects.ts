@@ -33,8 +33,7 @@ export const projects = [
       "React JS",
       "Sanity",
       "Firebase",
-      "Context API",
-      "Rapid API"
+      "Context API"
     ],
     sources: {
       github: "https://github.com/ainedoyle20/pin-it",
