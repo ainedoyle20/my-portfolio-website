@@ -31,6 +31,7 @@ export const projects = [
     features: [
       "Material UI",
       "React JS",
+      "TypeScript",
       "Sanity",
       "Firebase",
       "Context API"
